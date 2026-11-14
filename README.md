@@ -1,28 +1,46 @@
-CCSA105 – Policy Layers Practical Assignment
+
+
+\# CCSA105 – Policy Layers Practical Assignment
 
 
 
-!Course !Module !Platform !Status
+!\[Course](https://img.shields.io/badge/Course-CCSA105-blue)
+
+!\[Module](https://img.shields.io/badge/Module-5-orange)
+
+!\[Platform](https://img.shields.io/badge/Platform-Check%20Point%20SmartConsole-green)
+
+!\[Status](https://img.shields.io/badge/Documentation-Completed-brightgreen)
 
 
 
-Student Information
+\## Student Information
 
-Field	Details
 
-Student Name	Haileamlak Wudu Alene
 
-Registration ID	C11/26/CCSA/17002
+| Field | Details |
 
-Course	CCSA105 – Policy Layers
+|---|---|
 
-Module	Module 5
+| Student Name | Haileamlak Wudu Alene |
 
-Assignment	Practical Assignment: Policy Layers
+| Registration ID | C11/26/CCSA/17002 |
 
-Total Marks	100
+| Course | CCSA105 – Policy Layers |
 
-1\. Introduction
+| Module | Module 5 |
+
+| Assignment | Practical Assignment: Policy Layers |
+
+| Total Marks | 100 |
+
+
+
+\---
+
+
+
+\## 1. Introduction
 
 
 
@@ -42,7 +60,7 @@ The repository also documents the laboratory environment limitation that prevent
 
 
 
-2\. Learning Objectives
+\## 2. Learning Objectives
 
 
 
@@ -50,55 +68,69 @@ The main objectives of this assignment are to:
 
 
 
-Understand the Check Point policy layer concept.
+\- Understand the Check Point policy layer concept.
 
-Create and configure Ordered Layers.
+\- Create and configure Ordered Layers.
 
-Create and configure Inline Layers.
+\- Create and configure Inline Layers.
 
-Understand the order of policy enforcement.
+\- Understand the order of policy enforcement.
 
-Configure Access Control rules and Cleanup rules.
+\- Configure Access Control rules and Cleanup rules.
 
-Understand layer sharing and permissions.
+\- Understand layer sharing and permissions.
 
-Analyze the impact of layer order on traffic inspection.
+\- Analyze the impact of layer order on traffic inspection.
 
-Understand policy installation and traffic log verification.
+\- Understand policy installation and traffic log verification.
 
-3\. Laboratory Environment
 
-Component	Description
 
-Management Platform	Check Point Security Management Server
+\## 3. Laboratory Environment
 
-Management Interface	SmartConsole
 
-Policy Package	Orion-Layers
 
-Gateway Object	A-GW-Cluster
+| Component | Description |
 
-Network Layer	Network
+|---|---|
 
-Service Layer	Service-Control
+| Management Platform | Check Point Security Management Server |
 
-Inline Layer	DMZ-Policy
+| Management Interface | SmartConsole |
 
-Network Objects
+| Policy Package | Orion-Layers |
 
-Object	Type	IP Address / Network
+| Gateway Object | A-GW-Cluster |
 
-Internal\_LAN	Network	10.1.1.0/24
+| Network Layer | Network |
 
-DMZ\_Net	Network	172.16.10.0/24
+| Service Layer | Service-Control |
 
-Admin\_PC	Host	10.1.1.101
+| Inline Layer | DMZ-Policy |
 
-Web\_Server	Host	172.16.10.20
 
-Mail\_Server	Host	172.16.10.25
 
-4\. Policy Architecture
+\### Network Objects
+
+
+
+| Object | Type | IP Address / Network |
+
+|---|---|---|
+
+| Internal\_LAN | Network | 10.1.1.0/24 |
+
+| DMZ\_Net | Network | 172.16.10.0/24 |
+
+| Admin\_PC | Host | 10.1.1.101 |
+
+| Web\_Server | Host | 172.16.10.20 |
+
+| Mail\_Server | Host | 172.16.10.25 |
+
+
+
+\## 4. Policy Architecture
 
 
 
@@ -106,7 +138,7 @@ The Orion-Layers policy package contains two Ordered Layers and one Inline Layer
 
 
 
-Ordered Layer 1: Network
+\### Ordered Layer 1: Network
 
 
 
@@ -118,17 +150,19 @@ Rules include:
 
 
 
-Admin Access
+1\. Admin Access
 
-Stealth Rule
+2\. Stealth Rule
 
-Internal to DMZ
+3\. Internal to DMZ
 
-Outbound
+4\. Outbound
 
-Cleanup Rule
+5\. Cleanup Rule
 
-Ordered Layer 2: Service-Control
+
+
+\### Ordered Layer 2: Service-Control
 
 
 
@@ -140,13 +174,15 @@ Rules include:
 
 
 
-Admin Services
+1\. Admin Services
 
-Allowed Services
+2\. Allowed Services
 
-Cleanup Rule
+3\. Cleanup Rule
 
-Inline Layer: DMZ-Policy
+
+
+\### Inline Layer: DMZ-Policy
 
 
 
@@ -158,33 +194,41 @@ Rules include:
 
 
 
-Web Access
+1\. Web Access
 
-Mail Access
+2\. Mail Access
 
-Cleanup Rule
+3\. Cleanup Rule
 
-5\. Assignment Tasks
 
-Task	Description	Status
 
-Task 1	Explore Default Policy and Layer	Completed
+\## 5. Assignment Tasks
 
-Task 2	Create Orion-Layers and Network Layer	Completed
 
-Task 3	Create Service-Control Ordered Layer	Completed
 
-Task 4	Install, Test and Fix	Deferred
+| Task | Description | Status |
 
-Task 5	Create DMZ-Policy Inline Layer	Completed
+|---|---|---|
 
-Task 6	Install and Verify Inline Layer	Deferred
+| Task 1 | Explore Default Policy and Layer | Completed |
 
-Task 7	Layer Order and Sharing	Configuration completed; gateway tests deferred
+| Task 2 | Create Orion-Layers and Network Layer | Completed |
 
-Part B	Theory Questions	Prepared
+| Task 3 | Create Service-Control Ordered Layer | Completed |
 
-6\. Laboratory Limitation
+| Task 4 | Install, Test and Fix | Deferred |
+
+| Task 5 | Create DMZ-Policy Inline Layer | Completed |
+
+| Task 6 | Install and Verify Inline Layer | Deferred |
+
+| Task 7 | Layer Order and Sharing | Configuration completed; gateway tests deferred |
+
+| Part B | Theory Questions | Prepared |
+
+
+
+\## 6. Laboratory Limitation
 
 
 
@@ -200,13 +244,13 @@ Consequently, gateway-dependent activities could not be completed, including:
 
 
 
-Successful policy installation.
+\- Successful policy installation.
 
-SSH, HTTP, ICMP and Telnet traffic testing.
+\- SSH, HTTP, ICMP and Telnet traffic testing.
 
-Runtime verification of Inline Layer enforcement.
+\- Runtime verification of Inline Layer enforcement.
 
-Collection of actual firewall traffic logs.
+\- Collection of actual firewall traffic logs.
 
 
 
@@ -218,33 +262,45 @@ Activities requiring a functional gateway are identified as deferred or not perf
 
 
 
-7\. Repository Structure
-
-text
-
-Part-A-Practical/
-
-&#x20;   Task-1-Default-Policy/
-
-&#x20;   Task-2-Network-Layer/
-
-&#x20;   Task-3-Service-Control/
-
-&#x20;   Task-4-Installation-Testing/
-
-&#x20;   Task-5-Inline-Layer/
-
-&#x20;   Task-6-Inline-Verification/
-
-&#x20;   Task-7-Layer-Order-Sharing/
+\## 7. Repository Structure
 
 
 
-Part-B-Theory/
+```text
 
-&#x20;   answers.md
+CCSA105-Policy-Layers/
 
+│
 
+├── README.md
+
+├── .gitignore
+
+│
+
+├── Part-A-Practical/
+
+│   ├── Task-1-Default-Policy/
+
+│   ├── Task-2-Network-Layer/
+
+│   ├── Task-3-Service-Control/
+
+│   ├── Task-4-Installation-Testing/
+
+│   ├── Task-5-Inline-Layer/
+
+│   ├── Task-6-Inline-Verification/
+
+│   └── Task-7-Layer-Order-Sharing/
+
+│
+
+└── Part-B-Theory/
+
+&#x20;   └── answers.md
+
+```
 
 
 
@@ -252,31 +308,35 @@ Each practical task includes written documentation and an evidence directory for
 
 
 
-8\. Technologies and Concepts
+\## 8. Technologies and Concepts
 
-Check Point SmartConsole
 
-Check Point Security Management
 
-Access Control Policy
+\- Check Point SmartConsole
 
-Ordered Layers
+\- Check Point Security Management
 
-Inline Layers
+\- Access Control Policy
 
-Firewall Rules
+\- Ordered Layers
 
-Implicit Cleanup Action
+\- Inline Layers
 
-Explicit Cleanup Rules
+\- Firewall Rules
 
-Policy Sharing
+\- Implicit Cleanup Action
 
-Permission Profiles
+\- Explicit Cleanup Rules
 
-Firewall Logging
+\- Policy Sharing
 
-9\. Conclusion
+\- Permission Profiles
+
+\- Firewall Logging
+
+
+
+\## 9. Conclusion
 
 
 
@@ -292,13 +352,17 @@ Although runtime verification was limited by the absence of a functional Securit
 
 
 
-10\. References
+\## 10. References
 
-CCSA105 Module 5 course slides.
 
-Lab 5A: Configure Ordered Layers.
 
-Lab 5B: Configure Inline Layers.
+1\. CCSA105 Module 5 course slides.
 
-Check Point Quantum Security Management Administration Guide.
+2\. Lab 5A: Configure Ordered Layers.
+
+3\. Lab 5B: Configure Inline Layers.
+
+4\. Check Point Quantum Security Management Administration Guide.
+
+
 
