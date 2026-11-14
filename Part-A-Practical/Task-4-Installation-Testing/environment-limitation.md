@@ -1,36 +1,29 @@
-# Lab Environment Limitation – Gateway Installation and Traffic Testing
+# Lab Environment Limitation and Resolution
 
-## 1. Environment Description
+## Home Lab Limitation
 
-The practical assignment was performed using Check Point SmartConsole connected to the Security Management Server.
+During the initial home-lab work, SmartConsole was connected to the Security Management Server, but a functional Security Gateway was not available for runtime testing.
 
-The configuration activities, including policy package creation, Ordered Layer configuration, rule creation, and Inline Layer configuration, were performed in SmartConsole.
+Policy installation encountered a TCP connectivity failure. As a result, gateway-dependent activities such as SSH, HTTP, ICMP and Telnet testing, firewall log verification, and runtime policy enforcement could not be completed in that environment.
 
-## 2. Technical Limitation
+The policy configuration work was retained as evidence of the completed SmartConsole configuration.
 
-A functional Security Gateway appliance was not available in the lab environment.
+## Cloud Lab Resolution
 
-When attempting policy installation, the installation process encountered a TCP connectivity failure because the required gateway connectivity was unavailable.
+A cloud lab with a functional Security Gateway subsequently became available. The `Orion-Layers` policy package was successfully installed in the cloud environment.
 
-As a result, the policy could not be installed on a functioning gateway.
+This resolved the original gateway-availability limitation for policy installation and runtime testing.
 
-## 3. Impact on Practical Testing
+The initial SSH test was attempted in the cloud lab but timed out. Investigation indicated that the source IP observed by the gateway was a public/NAT address rather than the private `Admin_PC` address configured in the `Admin Services` rule.
 
-The following activities could not be verified:
+Therefore, the cloud environment enabled runtime testing, but the SSH test exposed a source-address matching issue that must be considered when interpreting the firewall logs.
 
-- Policy installation on the Security Gateway.
-- SSH connectivity testing.
-- HTTP and ICMP traffic testing.
-- Telnet traffic testing.
-- Verification of actual firewall traffic logs.
-- Runtime verification of Inline Layer enforcement.
+## Current Status
 
-## 4. Alternative Approach
+- Home-lab policy configuration: Completed.
+- Cloud-lab policy configuration: Completed.
+- Cloud policy installation: Successful.
+- Cloud SSH test (T1): Attempted; connection timed out due to a source-address mismatch indicated by the available observations.
+- Cloud tests T2–T5: Pending completion and evidence collection.
 
-The policy configurations were completed and documented in SmartConsole wherever possible.
-
-Gateway-dependent activities are marked as **Not Performed (N/P)** rather than reporting assumed results.
-
-## 5. Future Completion
-
-When a functional Security Gateway appliance becomes available, the remaining installation and traffic-testing activities can be completed using the existing **Orion-Layers** policy package.
+The home-lab limitation remains relevant as a description of the original environment, but it no longer prevents the assignment's gateway-dependent testing from being carried out in the cloud lab.
