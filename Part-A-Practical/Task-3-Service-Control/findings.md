@@ -6,6 +6,8 @@ The objective of this task was to create a second Ordered Layer named **Service-
 
 This layer provides service-level access control by allowing selected network services and dropping traffic that does not match the permitted rules.
 
+The configuration was completed in both the home and cloud laboratory environments. The same settings, layer structure, and rules were used in both environments.
+
 ## 2. General Settings
 
 The Service-Control layer was configured with the following settings:
@@ -34,6 +36,7 @@ Only the Firewall blade was enabled.
 
 The following administrator profiles were retained with editing permissions:
 
+- ICDFA-CCSA-PRACTICAL
 - Super User
 - Read-Write All
 
@@ -41,7 +44,7 @@ The following administrator profiles were retained with editing permissions:
 
 The Service-Control layer was added as the second Ordered Layer in the Orion-Layers policy package.
 
-The original order was:
+The final layer order was:
 
 1. Network
 2. Service-Control
@@ -63,13 +66,17 @@ The following rules were created:
 
 ## 7. Publishing and Verification
 
-The Service-Control layer was configured, added below Network, and published successfully in SmartConsole.
+The Service-Control layer was configured, added below Network, and published successfully in both laboratory environments.
 
-Gateway installation and runtime traffic testing were deferred because the functional Security Gateway appliance was unavailable.
+The cloud laboratory configuration was also deployed as part of the Orion-Layers policy package on the available Security Gateway.
+
+The configuration and layer ordering were verified in SmartConsole.
 
 ## 8. Evidence
 
-The following screenshots document the configuration:
+Evidence was collected separately from both laboratory environments.
+
+### Home Lab Evidence
 
 - `T3-01-General-Settings.png`
 - `T3-02-Advanced-Settings.png`
@@ -77,8 +84,22 @@ The following screenshots document the configuration:
 - `T3-04-Layer-Order.png`
 - `T3-05-Service-Control-Rulebase.png`
 
+### Cloud Lab Evidence
+
+The corresponding screenshots demonstrate:
+
+- General settings of Service-Control.
+- Advanced settings.
+- Permissions configuration.
+- Ordered Layer positioning.
+- Service-Control rulebase.
+
+Both sets of screenshots are included in the repository to demonstrate the implementation and verification of the configuration across the two environments.
+
 ## 9. Conclusion
 
-The **Service-Control Ordered Layer** was successfully created and configured.
+The **Service-Control Ordered Layer** was successfully created and configured in both the home and cloud laboratory environments.
 
-It provides a separate rulebase for controlling permitted network services and improves the organization of the overall Access Control policy.
+It provides a separate rulebase for controlling permitted network services and improves the organization and manageability of the overall Access Control policy.
+
+The configuration, publishing, and layer ordering were completed consistently across both environments.
